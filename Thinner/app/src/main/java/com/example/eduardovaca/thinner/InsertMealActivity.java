@@ -2,12 +2,14 @@ package com.example.eduardovaca.thinner;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -23,6 +25,9 @@ public class InsertMealActivity extends AppCompatActivity {
     private EditText day;
     private Button addDish;
     private Button finish;
+    private TextView listTV;
+
+    String list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +41,8 @@ public class InsertMealActivity extends AppCompatActivity {
         day = (EditText) findViewById(R.id.day_food_et);
         addDish = (Button) findViewById(R.id.add_dish_btn);
         finish = (Button) findViewById(R.id.finish_btn);
+        listTV  = (TextView) findViewById(R.id.list_dishes);
+        list = "";
 
         addDish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +68,16 @@ public class InsertMealActivity extends AppCompatActivity {
                             if (e == null) {
                                 Log.v(null, "DONE");
                                 Toast.makeText(getApplicationContext(), "Dish added!", Toast.LENGTH_SHORT).show();
+                                list += name.getText().toString() + " - " + time.getText().toString() + " - "
+                                        + day.getText().toString() + "\n";
+
+                                listTV.setText(list);
+                                name.setText("");
+                                units.setText("");
+                                quantity.setText("");
+                                time.setText("");
+                                day.setText("");
+
                             }
                         }
                     });
@@ -68,6 +85,15 @@ public class InsertMealActivity extends AppCompatActivity {
                     load.dismiss();
                 }
 
+            }
+        });
+
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(InsertMealActivity.this, Welcome.class);
+                startActivity(intent);
+                finish();
             }
         });
 

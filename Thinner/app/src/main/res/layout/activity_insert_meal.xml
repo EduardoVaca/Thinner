@@ -14,43 +14,64 @@
         android:orientation="vertical"
         android:layout_margin="5dp">
 
-        <EditText
-            android:id="@+id/name_food_et"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name of dish"
-            android:fontFamily="sans-serif-light"/>
-        <EditText
-            android:id="@+id/units_food_et"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of dish"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/units_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Units"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/quantity_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/time_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:inputType="time"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/day_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Day of week"
+                android:fontFamily="sans-serif-light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Units"
-            android:fontFamily="sans-serif-light"/>
-        <EditText
-            android:id="@+id/quantity_food_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Quantity"
-            android:inputType="number"
-            android:fontFamily="sans-serif-light"/>
-        <EditText
-            android:id="@+id/time_food_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Time"
-            android:inputType="time"
-            android:fontFamily="sans-serif-light"/>
-        <EditText
-            android:id="@+id/day_food_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Day of week"
-            android:fontFamily="sans-serif-light"/>
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/list_dishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"/>
+        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <Button
