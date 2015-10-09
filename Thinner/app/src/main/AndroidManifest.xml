@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="ParseApplication"
+        android:name=".ParseApplication"
         android:allowBackup="true"
         android:icon="@drawable/thinner_logo"
         android:label="@string/app_name"
@@ -15,18 +15,25 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginSignupActivity"
-            android:screenOrientation="portrait">
-
+        <activity
+            android:name=".LoginSignupActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".Welcome"
+        <activity
+            android:name=".Welcome"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".CreateDiet"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".InsertMealActivity"
             android:screenOrientation="portrait">
         </activity>
     </application>

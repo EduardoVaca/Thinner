@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.eduardovaca.thinner.InsertMealActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/name_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of dish"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/units_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Units"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/quantity_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantity"
+                android:inputType="number"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/time_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:inputType="time"
+                android:fontFamily="sans-serif-light"/>
+            <EditText
+                android:id="@+id/day_food_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Day of week"
+                android:fontFamily="sans-serif-light"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/list_dishes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add_dish_btn"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:text="Add Dish"
+                android:background="@color/colorAccent"
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:id="@+id/finish_btn"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:textColor="#ffff"
+                android:text="finish"
+                android:layout_margin="4dp"
+                android:background="@color/colorAccent"/>
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>

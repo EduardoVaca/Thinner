@@ -1,6 +1,7 @@
 package com.example.eduardovaca.thinner;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +16,7 @@ public class Welcome extends Activity {
 
     // Declare Variable
     private TextView logout;
+    private Button createDiet;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,9 +25,18 @@ public class Welcome extends Activity {
         setContentView(R.layout.welcome);
 
         logout = (TextView) findViewById(R.id.logout);
+        createDiet = (Button) findViewById(R.id.create_diet);
 
         // Retrieve current user from Parse.com
         ParseUser currentUser = ParseUser.getCurrentUser();
+
+        createDiet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Welcome.this, CreateDiet.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -38,5 +49,6 @@ public class Welcome extends Activity {
                 finish();
             }
         });
+
     }
 }
