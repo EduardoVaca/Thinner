@@ -2,6 +2,7 @@ package com.example.eduardovaca.thinner;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -35,7 +36,7 @@ public class CreateDiet extends AppCompatActivity {
                 Log.v(null, "Button pressed");
                 ParseUser currentUser = ParseUser.getCurrentUser();
 
-                ParseObject newDiet = new ParseObject("Diet");
+                final ParseObject newDiet = new ParseObject("Diet");
                 newDiet.put("userId", currentUser);
                 newDiet.put("name", dietName.getText().toString());
 
@@ -48,6 +49,10 @@ public class CreateDiet extends AppCompatActivity {
 
                         if(e == null){
                             Log.v(null, "Inserted");
+                            Intent intent = new Intent(CreateDiet.this, InsertMealActivity.class);
+                            intent.putExtra("OBJECT_ID", newDiet.getObjectId());
+                            startActivity(intent);
+                            finish();
                         }
                         load.dismiss();
                     }

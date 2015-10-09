@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".CreateDiet" >
         </activity>
+        <activity android:name=".InsertMealActivity" >
+        </activity>
     </application>
 
 </manifest>
