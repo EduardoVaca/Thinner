@@ -44,8 +44,13 @@ public class Welcome extends Activity {
             }
         });
 
-
-
+        myDiets.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Welcome.this, MyDietsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Logout Button Click Listener
         logout.setOnClickListener(new View.OnClickListener() {
