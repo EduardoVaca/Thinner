@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.lang.reflect.Array;
@@ -33,6 +34,7 @@ public class InsertMealActivity extends AppCompatActivity {
     private TextView listTV;
     private Spinner timeSpinner;
     private Spinner daySpinner;
+    private ProgressDialog loading;
 
     private static final String daysWeek [] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
     private static final String timeDay [] = {"Dawn", "Morning", "Noon", "Afternoon", "Evening"};
@@ -110,10 +112,25 @@ public class InsertMealActivity extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(InsertMealActivity.this, Welcome.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
+
+                loading = new ProgressDialog(InsertMealActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                loading.setMessage("Cargando");
+                loading.show();
+
+                ParseUser.getCurrentUser().put("actualDiet", getIntent().getStringExtra("OBJECT_ID"));
+                ParseUser.getCurrentUser().saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        loading.hide();
+                        if (e == null) {
+                            Intent intent = new Intent(InsertMealActivity.this, Welcome.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+
             }
         });
 

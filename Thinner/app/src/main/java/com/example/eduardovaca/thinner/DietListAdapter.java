@@ -2,6 +2,8 @@ package com.example.eduardovaca.thinner;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.parse.ParseFile;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 
 /**
  * Created by eduardovaca on 22/11/15.
@@ -45,6 +48,7 @@ public class DietListAdapter extends ArrayAdapter<ParseObject> {
             holder = new DietHolder();
             holder.name = (TextView)row.findViewById(R.id.name_diet);
             holder.date = (TextView) row.findViewById(R.id.diet_date);
+            holder.icon = (ImageView) row.findViewById(R.id.follow_icon);
 
 
             row.setTag(holder);
@@ -60,6 +64,12 @@ public class DietListAdapter extends ArrayAdapter<ParseObject> {
         holder.name.setText(diet.getString("name"));
         String dateArray[] = diet.getCreatedAt().toString().split(" ");
         holder.date.setText(dateArray[0] + " " + dateArray[1] + " " + dateArray[2]);
+        if(ParseUser.getCurrentUser().getString("actualDiet").equals(diet.getObjectId())){
+            holder.icon.setImageResource(R.drawable.following);
+        }else{
+            holder.icon.setImageResource(R.drawable.follow);
+        }
+
 
         return row;
     }
@@ -70,6 +80,7 @@ public class DietListAdapter extends ArrayAdapter<ParseObject> {
     {
         TextView name;
         TextView date;
+        ImageView icon;
     }
 }
 
