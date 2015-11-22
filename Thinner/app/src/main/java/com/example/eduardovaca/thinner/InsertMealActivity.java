@@ -28,8 +28,6 @@ public class InsertMealActivity extends AppCompatActivity {
     private EditText name;
     private EditText units;
     private EditText quantity;
-    private EditText time;
-    private EditText day;
     private Button addDish;
     private Button finish;
     private TextView listTV;
@@ -80,8 +78,8 @@ public class InsertMealActivity extends AppCompatActivity {
                     newDish.put("name", name.getText().toString());
                     newDish.put("units", units.getText().toString());
                     newDish.put("quantity", quantity.getText().toString());
-                    newDish.put("time", time.getText().toString());
-                    newDish.put("day", day.getText().toString());
+                    newDish.put("time", timeSpinner.getSelectedItem().toString());
+                    newDish.put("day", daySpinner.getSelectedItem().toString());
 
                     final ProgressDialog load = new ProgressDialog(InsertMealActivity.this, AlertDialog.THEME_HOLO_LIGHT);
                     load.show();
@@ -92,16 +90,13 @@ public class InsertMealActivity extends AppCompatActivity {
                             if (e == null) {
                                 Log.v(null, "DONE");
                                 Toast.makeText(getApplicationContext(), "Dish added!", Toast.LENGTH_SHORT).show();
-                                list += name.getText().toString() + " - " + time.getText().toString() + " - "
-                                        + day.getText().toString() + "\n";
+                                list += name.getText().toString() + " - " + daySpinner.getSelectedItem().toString() + " - "
+                                        + timeSpinner.getSelectedItem().toString() + "\n";
 
                                 listTV.setText(list);
                                 name.setText("");
                                 units.setText("");
                                 quantity.setText("");
-                                time.setText("");
-                                day.setText("");
-
                             }
                         }
                     });
