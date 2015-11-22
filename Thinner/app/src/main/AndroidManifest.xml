@@ -30,11 +30,17 @@
             android:name=".Welcome"
             android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".CreateDiet"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".CreateDiet"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".InsertMealActivity"
-            android:screenOrientation="portrait">
+        <activity
+            android:name=".InsertMealActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".MyDietsActivity"
+            android:screenOrientation="portrait" >
+
         </activity>
     </application>
 
