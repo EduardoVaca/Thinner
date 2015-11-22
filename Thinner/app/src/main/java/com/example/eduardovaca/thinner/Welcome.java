@@ -17,6 +17,9 @@ public class Welcome extends Activity {
     // Declare Variable
     private TextView logout;
     private Button createDiet;
+    private Button following;
+    private Button myDiets;
+    private Button discover;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +29,9 @@ public class Welcome extends Activity {
 
         logout = (TextView) findViewById(R.id.logout);
         createDiet = (Button) findViewById(R.id.create_diet);
+        following = (Button) findViewById(R.id.following);
+        myDiets = (Button) findViewById(R.id.my_diets);
+        discover = (Button) findViewById(R.id.discover);
 
         // Retrieve current user from Parse.com
         ParseUser currentUser = ParseUser.getCurrentUser();
@@ -37,6 +43,7 @@ public class Welcome extends Activity {
                 startActivity(intent);
             }
         });
+
 
 
 
