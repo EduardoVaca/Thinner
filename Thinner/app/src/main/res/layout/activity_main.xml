@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
+            android:imeOptions="actionNext"
             android:hint="Username"/>
         <EditText
             android:id="@+id/password"
@@ -38,6 +39,7 @@
             android:fontFamily="sans-serif-light"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
             android:hint="Password"/>
 
         <Button
