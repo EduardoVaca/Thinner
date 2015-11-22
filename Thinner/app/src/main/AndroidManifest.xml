@@ -39,7 +39,9 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity android:name=".MyDietsActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".Welcome">
+
 
         </activity>
     </application>

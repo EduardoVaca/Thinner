@@ -37,6 +37,7 @@
                 android:textColor="#ffff"
                 android:text="Create Diet"
                 android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
             <Button
@@ -46,6 +47,7 @@
                 android:textColor="#ffff"
                 android:text="Following"
                 android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
             <Button
@@ -55,6 +57,7 @@
                 android:textColor="#ffff"
                 android:text="My diets"
                 android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
             <Button
@@ -63,6 +66,7 @@
                 android:layout_height="40dp"
                 android:textColor="#ffff"
                 android:text="Discover"
+                android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorFade"/>
 
 
@@ -81,6 +85,7 @@
                 android:layout_centerInParent="true"
                 android:textColor="@color/colorAccent"
                 android:textSize="18dp"
+                android:fontFamily="sans-serif-condensed"
                 android:text="Logout" />
 
         </LinearLayout>

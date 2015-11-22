@@ -17,8 +17,8 @@
             android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:hint="Diet Name"/>
+            android:fontFamily="sans-serif-condensed-light"
+            android:hint="Diet Name" />
 
         <Button
             android:id="@+id/create_diet"
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:textColor="#ffff"
             android:text="Create Diet"
+            android:fontFamily="sans-serif-condensed"
             android:background="@color/colorAccent"/>
     </LinearLayout>
 
