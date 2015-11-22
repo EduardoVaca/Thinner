@@ -1,6 +1,8 @@
 package com.example.eduardovaca.thinner;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +26,7 @@ public class LoginSignupActivity extends Activity {
     String passwordtxt;
     EditText password;
     EditText username;
+    ProgressDialog loading;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -46,10 +49,15 @@ public class LoginSignupActivity extends Activity {
                 usernametxt = username.getText().toString();
                 passwordtxt = password.getText().toString();
 
+                loading = new ProgressDialog(LoginSignupActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                loading.setMessage("Cargando");
+                loading.show();
+
                 // Send data to Parse.com for verification
                 ParseUser.logInInBackground(usernametxt, passwordtxt,
                         new LogInCallback() {
                             public void done(ParseUser user, ParseException e) {
+                                loading.hide();
                                 if (user != null) {
                                     // If user exist and authenticated, send user to Welcome.class
                                     Intent intent = new Intent(
@@ -86,11 +94,18 @@ public class LoginSignupActivity extends Activity {
 
                 } else {
                     // Save new user data into Parse.com Data Storage
+
+                    loading = new ProgressDialog(LoginSignupActivity.this, AlertDialog.THEME_HOLO_LIGHT);
+                    loading.setMessage("Cargando");
+                    loading.show();
+
                     ParseUser user = new ParseUser();
                     user.setUsername(usernametxt);
                     user.setPassword(passwordtxt);
                     user.signUpInBackground(new SignUpCallback() {
                         public void done(ParseException e) {
+
+                            loading.hide();
                             if (e == null) {
                                 // Show a simple Toast message upon successful registration
                                 Toast.makeText(getApplicationContext(),
