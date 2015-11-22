@@ -45,6 +45,8 @@
         </activity>
         <activity android:name=".DaysActivity" >
         </activity>
+        <activity android:name=".DetailDietActivity" >
+        </activity>
     </application>
 
 </manifest>

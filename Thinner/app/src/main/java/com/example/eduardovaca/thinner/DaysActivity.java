@@ -1,7 +1,10 @@
 package com.example.eduardovaca.thinner;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class DaysActivity extends AppCompatActivity {
@@ -19,6 +22,16 @@ public class DaysActivity extends AppCompatActivity {
 
         DaysListAdapter dayAdapter = new DaysListAdapter(DaysActivity.this, R.layout.item_days, daysWeek);
         daysList.setAdapter(dayAdapter);
+
+
+        daysList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(DaysActivity.this, DetailDietActivity.class);
+                intent.putExtra("DAY", daysWeek[position]);
+                startActivity(intent);
+            }
+        });
 
     }
 }
