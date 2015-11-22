@@ -43,9 +43,13 @@
             android:parentActivityName=".Welcome"
             android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".DaysActivity" >
+        <activity android:name=".DaysActivity"
+            android:parentActivityName=".MyDietsActivity"
+            android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".DetailDietActivity" >
+        <activity android:name=".DetailDietActivity"
+            android:parentActivityName=".DaysActivity"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
