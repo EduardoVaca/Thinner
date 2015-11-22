@@ -38,11 +38,12 @@
             android:name=".InsertMealActivity"
             android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".MyDietsActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".Welcome">
-
-
+        <activity
+            android:name=".MyDietsActivity"
+            android:parentActivityName=".Welcome"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name=".DaysActivity" >
         </activity>
     </application>
 

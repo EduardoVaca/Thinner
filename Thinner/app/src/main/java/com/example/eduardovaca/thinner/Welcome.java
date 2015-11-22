@@ -44,6 +44,14 @@ public class Welcome extends Activity {
             }
         });
 
+        following.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Welcome.this, DaysActivity.class);
+                startActivity(intent);
+            }
+        });
+
         myDiets.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
