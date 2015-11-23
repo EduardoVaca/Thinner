@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                 android:layout_height="40dp"
                 android:textColor="#ffff"
                 android:text="Create Diet"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
@@ -46,7 +47,7 @@
                 android:layout_height="40dp"
                 android:textColor="#ffff"
                 android:text="Following"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
@@ -60,14 +61,6 @@
                 android:fontFamily="sans-serif-condensed"
                 android:background="@color/colorAccent"/>
 
-            <Button
-                android:id="@+id/discover"
-                android:layout_width="200dp"
-                android:layout_height="40dp"
-                android:textColor="#ffff"
-                android:text="Discover"
-                android:fontFamily="sans-serif-condensed"
-                android:background="@color/colorFade"/>
 
 
         </LinearLayout>

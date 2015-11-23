@@ -31,7 +31,6 @@ public class Welcome extends Activity {
         createDiet = (Button) findViewById(R.id.create_diet);
         following = (Button) findViewById(R.id.following);
         myDiets = (Button) findViewById(R.id.my_diets);
-        discover = (Button) findViewById(R.id.discover);
 
         // Retrieve current user from Parse.com
         ParseUser currentUser = ParseUser.getCurrentUser();
